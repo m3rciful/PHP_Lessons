@@ -42,7 +42,7 @@ if ( isset($_POST["submit"]) )
 	echo "<hr>"; // --------------------------------------------------------------
 
 	echo "<h2>Make tableN</h2>";
-	echo make_tableN(5,7);
+	echo make_tableN(5,17);
 ?>
 </body>
 </html>
