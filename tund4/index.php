@@ -11,26 +11,29 @@
 	<div id="header">
     	<div class="logo"><img src="images/logo1.png" border="0" alt="" title=""  align="middle" /><span>Образование</span></div>       
     </div>
-	<!--Start menyy           -->
+	<!--Start menyy-->
         <div class="menu">
-	<!-----------------------------------000 START-->		
+	<!-----------------------------------000-START-->		
     <?php
         include 'model/nav_menu.php';
         $menu = arrayNav();
         include 'controller/menu_layout.php';
     ?>
 
-	<!-----------------------------------000 END-->			
+	<!-----------------------------------000-END-->			
         </div>
  <!--Start content           -->       
     <div class="center_content">
     
      	<div class="center_left">
         	<div class="title_welcome"><span class="red">Образование</span> в Эстонии</div>
-	<!-----------------------------------111 START-->
-	
+	<!-----------------------------------111-START-->
+	<?php 
+    include 'view/view.php';
+    ?> 
+    
 
-     <!----------------------------------111 END-->          
+     <!----------------------------------111-END-->          
             
             
         </div>  
@@ -41,9 +44,9 @@
 <!--Start footer           -->	    
     <div id="footer">                                              
         <div class="left_footer"> 		
-	    <?php
-            include 'controller/menu_layout.php';
-        ?>	
+
+	    <?php include 'controller/menu_layout.php'; ?>	
+
 		</div>
 		<div class="right_footer">Design &copy; 2015</div>  
     
