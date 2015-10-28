@@ -1,16 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Задание Тема 5</title>
+</head>
+<body>
+
 <?php
 	session_start();
-	if (isset($_SESSION['rank']) AND $_SESSION['rank'] == 'admin')
+	if ( empty($_SESSION['rank']))
 	{
-		header('Location:main.php');
-	}
-	elseif (isset($_SESSION['rankU']) AND $_SESSION['rank'] == $_SESSION['rankU'])
-	{
-		header('Location: main.php');
-	}
 ?>
-<a href="main.php"><- Назад</a>
-
 <table>
 	<tr>
 		<th><h3>Введите ваши данные</h3></th>
@@ -30,3 +29,13 @@
 		</tr>
 	</form>
 </table>
+<?php
+	}
+	else
+	{
+		echo 'Привет, <b>' .$_SESSION['rank']. '</b> <a href="actions/logout.php">Выход</a>';
+	}
+?>
+
+</body>
+</html>

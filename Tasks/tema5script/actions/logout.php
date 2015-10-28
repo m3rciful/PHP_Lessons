@@ -1,8 +1,8 @@
 <?php
 	session_start();
-	//session_destroy();
+	session_destroy();
 	unset($_SESSION['rank']);
-	//unset($_SESSION['rankU']);
-	//unset($_SESSION['passU']);
+	unset($_SESSION['rankU']);
+	unset($_SESSION['passU']);
 	header('Location: ../index.php');
 ?>

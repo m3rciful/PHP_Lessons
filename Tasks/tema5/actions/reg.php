@@ -1,22 +1,25 @@
-<a href="../main.php"><- Назад</a><br>
+<a href="../index.php"><- Назад</a><br>
 <?php
-	if (isset($_POST['login']) AND isset($_POST['password']))
+	if (isset($_POST['login']) AND isset($_POST['password']) AND isset($_POST['password2']))
 	{
 		$login = $_POST['login'];
 		$password = $_POST['password'];
 		$password2 = $_POST['password2'];
 
 		if (!$login)
-			echo 'Не введен логин';
+			echo 'no login';
+		elseif (!$password)
+			echo 'no pass';
 		elseif ($password != $password2)
-			echo 'Пароли не совпадают';
+			echo 'no passN';
 		else
 		{
 			session_start();
 			$_SESSION['rankU'] = $login;
 			$_SESSION['passU'] = $password;
 
-			echo 'Новый пользователь зарегестрирован!';
+			echo 'OK';
+			//echo 'Новый пользователь <b>'. $login. '</b> добавлен!';
 		}
 	}
 	else
@@ -34,11 +37,11 @@
 			<td colspan="2"><input type="password" name="password" id="password" placeholder="Пароль"><br><br></td>
 		</tr>
 		<tr>
-			<td colspan="2"><input type="password2" name="password2" id="password2" placeholder="Пароль еще раз"><br><br></td>
+			<td colspan="2"><input type="password" name="password2" id="password2" placeholder="Пароль еще раз"><br><br></td>
 		</tr>
 		<tr>
 			<td><input type="submit" name="submit" id="submit" value="Регистрация"></td>
-			<td><a href="../admin.php">Войти</a></td>
+			<td><a href="../index.php">Войти</a></td>
 		</tr>
 	</form>
 </table>

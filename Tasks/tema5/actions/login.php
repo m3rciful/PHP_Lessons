@@ -1,24 +1,17 @@
 <?php
-	session_start();
-	if (isset($_POST['login']) AND isset($_POST['password']))
+	if (isset($_POST['submit']))
 	{
-		echo '<a href="../main.php"><- Назад</a><br>';
+		echo '<a href="../index.php"><- Назад</a><br>';
 
 		$login = $_POST['login'];
 		$password = $_POST['password'];
 
-		// == for test =======================
-		//echo $login . '<br>' . $password;
-
+		session_start();
 		if ($login == 'admin' AND $password == '123')
 		{
 			$_SESSION['rank'] = 'admin';
-			echo 'Вошли как администратор';
-		}
-		elseif ($login == $_SESSION['rankU'] AND $password == $_SESSION['passU'])
-		{
-			$_SESSION['rank'] = $login;
-			echo "Вошли как пользователь";
+			//echo 'Вошли как администратор';
+			header('Location: ../index.php');
 		}
 		else
 		{
@@ -26,8 +19,14 @@
 				echo 'no login';
 			elseif (!$password)
 				echo 'no pass';
+			elseif ($login == $_SESSION['rankU'] AND $password == $_SESSION['passU'])
+			{
+			$_SESSION['rank'] = $login;
+			//echo "Вошли как пользователь";
+			header('Location: ../index.php');
+			}
 			else
-				echo 'error';
+				echo 'user not found';
 		}
 	}
 ?>
