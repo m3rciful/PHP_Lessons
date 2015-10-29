@@ -7,12 +7,12 @@
 			<fieldset>
 
 				<p>
-					<label for="login-username">Имя пользователя</label>
+					<label for="login">Имя пользователя</label>
 					<input type="text" id="login" class="round full-width-input" autofocus />
 				</p>
 
 				<p>
-					<label for="login-password">Пароль</label>
+					<label for="password">Пароль</label>
 					<input type="password" id="password" class="round full-width-input" />
 				</p>
 				
